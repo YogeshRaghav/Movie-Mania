@@ -1,38 +1,345 @@
-.App {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0; 
+  color: #000000; 
+  overflow-x: hidden;
+  background-image: url('image/pic4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #A52A2A;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.ab {
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  color: #ffcc00;
+}
+
+.ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.ul ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.ul ul li {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.ul ul li:hover {
+  text-decoration: underline;
+}
+
+.ul a {
+  color: inherit;          
+  text-decoration: none;   
+}
+
+.ul a:hover {
+  text-decoration: underline; 
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; 
+  padding: 16px;
+}
+
+.container {
+  margin-left: 61px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 16px; 
+  justify-content: center; 
+  padding: 16px;
+  width: 100%;
+}
+
+.card {
+  transition: 0.3s;
+  width: 200px;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 300px;
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card .rating-container {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: auto;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.date-lang {
+  display: flex;
+  gap: 20px;
+}
+
+/* MovieDetails.css */
+.movie-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-top: 70px;
+  overflow: hidden;
+  background-image: url('image/pxfuel.jpg');
+}
+
+.movie-poster {
+  flex: 0 0 auto; /* Prevents the poster from stretching */
+}
+
+.movie-poster img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-content {
+  position: relative;
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover; /* Ensures the background image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat;
+  min-width: 300px; /* Matches the width of the image */
+}
+
+.movie-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+.movie-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-image: inherit; 
+  filter: blur(3px); 
+  z-index: 0; 
+}
+
+.movie-info {
+  position: relative; 
+  z-index: 2; 
+  color: #e0e0e0;
+}
+
+.movie-info h2, .movie-info h3, .movie-info p {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.movie-info h2 {
+  font-size: 1.8em;
+  color: #ffcc00;
+  text-align: center;
+}
+
+.movie-info h3 {
+  font-size: 1.5em;
+  color: #ffcc00;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.rl-date {
+  color: #ffcc00;
+}
+
+.link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link a:hover {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.movie-info p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.genre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  gap: 4px;
+  margin-top: -28px;
+}
+
+.search {
+  /* position: fixed; */
+  margin-top: 80px;
+  display: flex;
+  margin-left: 135px;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 1000; */
+}
+
+.search-input-container {
+  position: relative; /* Needed for positioning the icon inside */
+}
+
+.search input {
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 40px 0 15px; /* Add padding on the right for the icon */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.search .fa-search {
+  position: absolute;
+  right: 15px; /* Position the icon from the right edge */
+  top: 50%;
+  transform: translateY(-50%); /* Center the icon vertically */
+  color: #333; /* Icon color */
+  cursor: pointer;
+}
+
+.bottom-Navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+  margin-bottom: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Container for the loader */
+.loader-container {
+  margin-left: 151px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Loader styling */
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #A52A2A; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+/* Animation for spinning */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.search-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 300px;
 }
