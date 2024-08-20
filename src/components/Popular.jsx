@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 
 import HandleButton from "./HandleButton";
 import Search from "./Search";
@@ -8,7 +8,7 @@ const Popular = ({ movies, loading, changeGenreName,query, handleInputChange, ha
 
   useEffect(() => {
     changeGenreName("popular");
-  },[]);
+  });
 
   return (
     <>

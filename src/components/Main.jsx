@@ -62,7 +62,7 @@ const Main = () => {
       <Navbar />
       <Routes>
         <Route
-          path="/"
+          path="/Movie-Mania"
           element={
             <Home
               movies={movies}
