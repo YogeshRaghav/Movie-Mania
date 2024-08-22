@@ -7,20 +7,22 @@ const MovieDetails = () => {
   const [movie, setMovies] = useState(null);
   const {id} = useParams()
 
-  const fetchMovie = async () => {
-    const api_key = '2e9da9a3cfe6fb49043769ce9d3a74d8'
-    const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
-    try {
-      const res = await fetch(`${baseUrl}`)
-      const result = await res.json();
-      setMovies(result)
-      // console.log('===result',result)
-    } catch (error) {
-      console.log('error',error)
-    }
-  }
-
+  
   useEffect(() => {
+
+    const fetchMovie = async () => {
+      const api_key = '2e9da9a3cfe6fb49043769ce9d3a74d8'
+      const baseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
+      try {
+        const res = await fetch(`${baseUrl}`)
+        const result = await res.json();
+        setMovies(result)
+        // console.log('===result',result)
+      } catch (error) {
+        console.log('error',error)
+      }
+    }
+
     fetchMovie()
   },[id])
 
