@@ -50,18 +50,31 @@ body {
 .ul ul li {
   margin-right: 50px;
   cursor: pointer;
+  position: relative; 
 }
 
-.ul ul li:hover {
-  text-decoration: underline;
+.ul ul li.active a {
+  color: #ffcc00; 
+  font-weight: bold; 
 }
 
-.ul a {
+.ul ul li a {
   color: inherit;          
   text-decoration: none;   
 }
 
-.ul a:hover {
+
+.ul ul li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: #ffcc00; 
+}
+
+.ul ul li:hover a {
   text-decoration: underline; 
 }
 

@@ -7,7 +7,6 @@ import MovieDetails from "./MovieDetails";
 import Toprated from "./Toprated";
 import Popular from "./Popular";
 import Upcoming from "./Upcoming";
-// import { FaSearch } from "react-icons/fa";
 
 const Main = () => {
   const [query, setQuery] = useState("");
@@ -30,7 +29,6 @@ const Main = () => {
       }
 
   }
-
   useEffect(() => {
       getGenre(name)
   },[name])
@@ -40,7 +38,7 @@ const Main = () => {
   };
 
   const searchMovie = async () => {
-      setLoading(true)
+    setLoading(true)
     const api_key = "2e9da9a3cfe6fb49043769ce9d3a74d8";
     const baseUrl = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&include_adult=false&language=en-US&page=1`;
     try {
@@ -54,7 +52,8 @@ const Main = () => {
   };
 
   const handleButton = () => {
-    searchMovie();
+    query && searchMovie();
+    setQuery('')
   };
 
   return (

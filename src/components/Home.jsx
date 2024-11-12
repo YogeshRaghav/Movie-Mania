@@ -28,6 +28,7 @@ const Home = ({
       ) : (
         <HandleButton movies={movies} />
       )}
+
     </>
   );
 };

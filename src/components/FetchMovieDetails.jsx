@@ -12,7 +12,7 @@ const FetchMovieDetails = async (type) => {
       totalPages = 160;
     }
     let allMovies = [...res.results];
-    console.log('first page movie=====', allMovies)
+    // console.log('first page movie=====', allMovies)
 
     for (let page = 2; page <= totalPages; page++) {
       const response = await fetch(`${baseUrl}&page=${page}`);

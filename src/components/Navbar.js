@@ -1,7 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation()
+
+  const isActive = (path) => location.pathname === path
+
   return (
     <nav className="navbar">
       <div className="ab">
@@ -10,16 +14,16 @@ const Navbar = () => {
 
       <div className="ul">
         <ul>
-          <li>
+          <li className = {isActive('/' ? 'active' : '')}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className = {isActive('/toprated') ? 'active' : ''}>
             <Link to="/toprated">Top Rated</Link>
           </li>
-          <li>
+          <li className = {isActive('/upcoming') ? 'active' : ''}>
             <Link to="/upcoming">Upcoming</Link>
           </li>
-          <li>
+          <li className = {isActive('/popular') ? 'active' : ''}>
             <Link to="/popular">Popular</Link>
           </li>
         </ul>
