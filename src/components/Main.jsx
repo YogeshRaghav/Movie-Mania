@@ -22,10 +22,14 @@ const Main = () => {
       setLoading(true)
       try {
           const allMovies = await FetchMovieDetails(genreName)
-          setMovies(allMovies)
-          setLoading(false)
+          if(allMovies?.length){
+            setMovies(allMovies)
+            setLoading(false)
+          }
+          
       } catch (error) {
           console.log('Error in main jsx file',error)
+          setLoading(false)
       }
 
   }

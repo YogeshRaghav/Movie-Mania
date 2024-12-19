@@ -5,14 +5,12 @@ const FetchMovieDetails = async (type) => {
   try {
     const initialResponse = await fetch(baseUrl);
     const res = await initialResponse.json();
-    // console.log('====res',res)
 
     let totalPages = res.total_pages;
     if (totalPages > 160) {
       totalPages = 160;
     }
     let allMovies = [...res.results];
-    // console.log('first page movie=====', allMovies)
 
     for (let page = 2; page <= totalPages; page++) {
       const response = await fetch(`${baseUrl}&page=${page}`);

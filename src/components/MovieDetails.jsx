@@ -16,7 +16,7 @@ const MovieDetails = () => {
         const res = await fetch(`${baseUrl}`)
         const result = await res.json();
         setMovies(result)
-        // console.log('===result',result)
+    
       } catch (error) {
         console.log('error',error)
       }
